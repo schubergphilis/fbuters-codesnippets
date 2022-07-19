@@ -1,0 +1,1466 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "message_identification",
+        "valuta",
+        "bedrag",
+        "openingssaldo",
+        "boek_tijdstip",
+        "valutadatum",
+        "transactiecode",
+        "transactie_lettercode",
+        "iban_tegenpartij",
+        "naam_tegenpartij",
+        "boeking_referentie",
+        "omschrijving",
+        "Batchtransactie",
+        "Transactie",
+        "Cardtransactie"
+    ],
+    "properties": {
+        "message_identification": {
+            "type": "object",
+            "default": {},
+            "title": "The message_identification Schema",
+            "required": [
+                "bron",
+                "journaaldatum",
+                "volgnummer"
+            ],
+            "properties": {
+                "bron": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The bron Schema",
+                    "examples": [
+                        "SAS"
+                    ]
+                },
+                "journaaldatum": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The journaaldatum Schema",
+                    "examples": [
+                        "2012-04-23"
+                    ]
+                },
+                "volgnummer": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The volgnummer Schema",
+                    "examples": [
+                        12345
+                    ]
+                }
+            },
+            "examples": [{
+                "bron": "SAS",
+                "journaaldatum": "2012-04-23",
+                "volgnummer": 12345
+            }]
+        },
+        "valuta": {
+            "type": "string",
+            "default": "",
+            "title": "The valuta Schema",
+            "examples": [
+                "EUR"
+            ]
+        },
+        "bedrag": {
+            "type": "number",
+            "default": 0.0,
+            "title": "The bedrag Schema",
+            "examples": [
+                123456789.12
+            ]
+        },
+        "openingssaldo": {
+            "type": "number",
+            "default": 0.0,
+            "title": "The openingssaldo Schema",
+            "examples": [
+                
+                -12345678901.12
+            ]
+        },
+        "boek_tijdstip": {
+            "type": "string",
+            "default": "",
+            "title": "The boek_tijdstip Schema",
+            "examples": [
+                "2012-04-23T18:25:43.511"
+            ]
+        },
+        "valutadatum": {
+            "type": "string",
+            "default": "",
+            "title": "The valutadatum Schema",
+            "examples": [
+                "2012-04-23"
+            ]
+        },
+        "transactiecode": {
+            "type": "string",
+            "default": "",
+            "title": "The transactiecode Schema",
+            "examples": [
+                "9720"
+            ]
+        },
+        "transactie_lettercode": {
+            "type": "string",
+            "default": "",
+            "title": "The transactie_lettercode Schema",
+            "examples": [
+                "OVB"
+            ]
+        },
+        "iban_tegenpartij": {
+            "type": "string",
+            "default": "",
+            "title": "The iban_tegenpartij Schema",
+            "examples": [
+                "FR7630004013280001220066504"
+            ]
+        },
+        "naam_tegenpartij": {
+            "type": "string",
+            "default": "",
+            "title": "The naam_tegenpartij Schema",
+            "examples": [
+                "Gerard Depardieu"
+            ]
+        },
+        "boeking_referentie": {
+            "type": "object",
+            "default": {},
+            "title": "The boeking_referentie Schema",
+            "required": [
+                "navraagnummer",
+                "betalingskenmerk",
+                "eb_sleutel"
+            ],
+            "properties": {
+                "navraagnummer": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The navraagnummer Schema",
+                    "examples": [
+                        "Dossier1234"
+                    ]
+                },
+                "betalingskenmerk": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The betalingskenmerk Schema",
+                    "examples": [
+                        "1234-5678-01.23"
+                    ]
+                },
+                "eb_sleutel": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The eb_sleutel Schema",
+                    "required": [
+                        "contractnummer",
+                        "setnummer",
+                        "transactienummer"
+                    ],
+                    "properties": {
+                        "contractnummer": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The contractnummer Schema",
+                            "examples": [
+                                "12345678"
+                            ]
+                        },
+                        "setnummer": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The setnummer Schema",
+                            "examples": [
+                                "123456789012"
+                            ]
+                        },
+                        "transactienummer": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The transactienummer Schema",
+                            "examples": [
+                                "12345"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "contractnummer": "12345678",
+                        "setnummer": "123456789012",
+                        "transactienummer": "12345"
+                    }]
+                }
+            },
+            "examples": [{
+                "navraagnummer": "Dossier1234",
+                "betalingskenmerk": "1234-5678-01.23",
+                "eb_sleutel": {
+                    "contractnummer": "12345678",
+                    "setnummer": "123456789012",
+                    "transactienummer": "12345"
+                }
+            }]
+        },
+        "omschrijving": {
+            "type": "string",
+            "default": "",
+            "title": "The omschrijving Schema",
+            "examples": [
+                "jeetje wat een lange transactieomschrijving. maar je kunt dan ook 480 karakters maximaal ontvangen. Dat zal niet vaak voorkomen."
+            ]
+        },
+        "Batchtransactie": {
+            "type": "object",
+            "default": {},
+            "title": "The Batchtransactie Schema",
+            "required": [
+                "payment_information_identification",
+                "aantal_transacties",
+                "totaalbedrag"
+            ],
+            "properties": {
+                "payment_information_identification": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The payment_information_identification Schema",
+                    "examples": [
+                        "payment_batch_id234"
+                    ]
+                },
+                "aantal_transacties": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The aantal_transacties Schema",
+                    "examples": [
+                        87
+                    ]
+                },
+                "totaalbedrag": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The totaalbedrag Schema",
+                    "examples": [
+                        "123456789.12"
+                    ]
+                }
+            },
+            "examples": [{
+                "payment_information_identification": "payment_batch_id234",
+                "aantal_transacties": 87,
+                "totaalbedrag": "123456789.12"
+            }]
+        },
+        "Transactie": {
+            "type": "object",
+            "default": {},
+            "title": "The Transactie Schema",
+            "required": [
+                "settlementdatum",
+                "inlegdatum",
+                "transactie_referentie",
+                "bedragsinformatie",
+                "charges",
+                "charge_bearer",
+                "debiteur",
+                "crediteur",
+                "uiteindelijke_debiteur",
+                "uiteindelijke_crediteur",
+                "remittance",
+                "local_instrument_code",
+                "direct_debit_info",
+                "purpose",
+                "category_purpose",
+                "terugbetaling",
+                "reden_terugbetaling"
+            ],
+            "properties": {
+                "settlementdatum": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The settlementdatum Schema",
+                    "examples": [
+                        "2012-04-23"
+                    ]
+                },
+                "inlegdatum": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The inlegdatum Schema",
+                    "examples": [
+                        "2012-04-23"
+                    ]
+                },
+                "transactie_referentie": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The transactie_referentie Schema",
+                    "required": [
+                        "endtoend_identification",
+                        "transaction_identification",
+                        "instruction_identification",
+                        "payment_information_identification",
+                        "mandate_id",
+                        "account_servicer_reference",
+                        "uetr"
+                    ],
+                    "properties": {
+                        "endtoend_identification": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The endtoend_identification Schema",
+                            "examples": [
+                                "CUSTOMERReference1"
+                            ]
+                        },
+                        "transaction_identification": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The transaction_identification Schema",
+                            "examples": [
+                                "SCT202204240000100001"
+                            ]
+                        },
+                        "instruction_identification": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The instruction_identification Schema",
+                            "examples": [
+                                "instructie12314"
+                            ]
+                        },
+                        "payment_information_identification": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The payment_information_identification Schema",
+                            "examples": [
+                                "payment_batch_id234"
+                            ]
+                        },
+                        "mandate_id": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The mandate_id Schema",
+                            "examples": [
+                                "incassomandaat1234"
+                            ]
+                        },
+                        "account_servicer_reference": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The account_servicer_reference Schema",
+                            "examples": [
+                                "DV220424ZIK00004"
+                            ]
+                        },
+                        "uetr": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The uetr Schema",
+                            "examples": [
+                                "fbd82ac9-dc5d-4c56-a680-e14d43616f22"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "endtoend_identification": "CUSTOMERReference1",
+                        "transaction_identification": "SCT202204240000100001",
+                        "instruction_identification": "instructie12314",
+                        "payment_information_identification": "payment_batch_id234",
+                        "mandate_id": "incassomandaat1234",
+                        "account_servicer_reference": "DV220424ZIK00004",
+                        "uetr": "fbd82ac9-dc5d-4c56-a680-e14d43616f22"
+                    }]
+                },
+                "bedragsinformatie": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The bedragsinformatie Schema",
+                    "required": [
+                        "instructed_amount",
+                        "instructed_currency",
+                        "settlement_amount",
+                        "settlement_currency",
+                        "exchange_rate"
+                    ],
+                    "properties": {
+                        "instructed_amount": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The instructed_amount Schema",
+                            "examples": [
+                                123456789.12
+                            ]
+                        },
+                        "instructed_currency": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The instructed_currency Schema",
+                            "examples": [
+                                "USD"
+                            ]
+                        },
+                        "settlement_amount": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The settlement_amount Schema",
+                            "examples": [
+                                123456789.12
+                            ]
+                        },
+                        "settlement_currency": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The settlement_currency Schema",
+                            "examples": [
+                                "USD"
+                            ]
+                        },
+                        "exchange_rate": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The exchange_rate Schema",
+                            "examples": [
+                                123456.12345678
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "instructed_amount": 123456789.12,
+                        "instructed_currency": "USD",
+                        "settlement_amount": 123456789.12,
+                        "settlement_currency": "USD",
+                        "exchange_rate": 123456.12345678
+                    }]
+                },
+                "charges": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The charges Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "currency_code",
+                            "charge_amount",
+                            "charge_type"
+                        ],
+                        "properties": {
+                            "currency_code": {
+                                "type": "string",
+                                "title": "The currency_code Schema",
+                                "examples": [
+                                    "USD",
+                                    "GBP",
+                                    "EUR"
+                                ]
+                            },
+                            "charge_amount": {
+                                "type": "number",
+                                "title": "The charge_amount Schema",
+                                "examples": [
+                                    123456789.12,
+                                    1234.12,
+                                    12.12,
+                                    1.10
+                                ]
+                            },
+                            "charge_type": {
+                                "type": "string",
+                                "title": "The charge_type Schema",
+                                "examples": [
+                                    "SENDER_CHARGES",
+                                    "RECEIVER_CHARGES",
+                                    "FEE",
+                                    "EXCHANGE_RATE_SURCHARGE"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "currency_code": "USD",
+                            "charge_amount": 123456789.12,
+                            "charge_type": "SENDER_CHARGES"
+                        },
+                        {
+                            "currency_code": "GBP",
+                            "charge_amount": 1234.12,
+                            "charge_type": "RECEIVER_CHARGES"
+                        },
+                        {
+                            "currency_code": "EUR",
+                            "charge_amount": 12.12,
+                            "charge_type": "FEE"
+                        },
+                        {
+                            "currency_code": "EUR",
+                            "charge_amount": 1.10,
+                            "charge_type": "EXCHANGE_RATE_SURCHARGE"
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "currency_code": "USD",
+                            "charge_amount": 123456789.12,
+                            "charge_type": "SENDER_CHARGES"
+                        },
+                        {
+                            "currency_code": "GBP",
+                            "charge_amount": 1234.12,
+                            "charge_type": "RECEIVER_CHARGES"
+                        },
+                        {
+                            "currency_code": "EUR",
+                            "charge_amount": 12.12,
+                            "charge_type": "FEE"
+                        },
+                        {
+                            "currency_code": "EUR",
+                            "charge_amount": 1.10,
+                            "charge_type": "EXCHANGE_RATE_SURCHARGE"
+                        }]
+                    ]
+                },
+                "charge_bearer": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The charge_bearer Schema",
+                    "examples": [
+                        "SHARED"
+                    ]
+                },
+                "debiteur": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The debiteur Schema",
+                    "required": [
+                        "naam",
+                        "adresregel_een",
+                        "adresregel_twee",
+                        "rekening",
+                        "financiele_instantie",
+                        "identificatie"
+                    ],
+                    "properties": {
+                        "naam": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The naam Schema",
+                            "examples": [
+                                "Laurens van Leuven"
+                            ]
+                        },
+                        "adresregel_een": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The adresregel_een Schema",
+                            "examples": [
+                                "Croeselaan 1"
+                            ]
+                        },
+                        "adresregel_twee": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The adresregel_twee Schema",
+                            "examples": [
+                                "Utrecht"
+                            ]
+                        },
+                        "rekening": {
+                            "type": "object",
+                            "default": {},
+                            "title": "The rekening Schema",
+                            "required": [
+                                "IBAN",
+                                "anders"
+                            ],
+                            "properties": {
+                                "IBAN": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The IBAN Schema",
+                                    "examples": [
+                                        "NL48SNSB0186743106"
+                                    ]
+                                },
+                                "anders": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The anders Schema",
+                                    "examples": [
+                                        "kan niet tegelijk met iban"
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "IBAN": "NL48SNSB0186743106",
+                                "anders": "kan niet tegelijk met iban"
+                            }]
+                        },
+                        "financiele_instantie": {
+                            "type": "object",
+                            "default": {},
+                            "title": "The financiele_instantie Schema",
+                            "required": [
+                                "BIC"
+                            ],
+                            "properties": {
+                                "BIC": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The BIC Schema",
+                                    "examples": [
+                                        "SNSBNL2AXXX"
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "BIC": "SNSBNL2AXXX"
+                            }]
+                        },
+                        "identificatie": {
+                            "type": "object",
+                            "default": {},
+                            "title": "The identificatie Schema",
+                            "required": [
+                                "persoonsidentificatie",
+                                "organisatie_identificatie"
+                            ],
+                            "properties": {
+                                "persoonsidentificatie": {
+                                    "type": "object",
+                                    "default": {},
+                                    "title": "The persoonsidentificatie Schema",
+                                    "required": [
+                                        "geboortedatum",
+                                        "geboorteplaats",
+                                        "geboorteprovincie",
+                                        "geboorteland",
+                                        "andere_persoonsidentificatie_tekst",
+                                        "andere_persoonsidentificatie_schema",
+                                        "andere_persoonsidentificatie_issuer"
+                                    ],
+                                    "properties": {
+                                        "geboortedatum": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The geboortedatum Schema",
+                                            "examples": [
+                                                "2012-04-23"
+                                            ]
+                                        },
+                                        "geboorteplaats": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The geboorteplaats Schema",
+                                            "examples": [
+                                                "BREDA"
+                                            ]
+                                        },
+                                        "geboorteprovincie": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The geboorteprovincie Schema",
+                                            "examples": [
+                                                "Noord Brabant"
+                                            ]
+                                        },
+                                        "geboorteland": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The geboorteland Schema",
+                                            "examples": [
+                                                "NL"
+                                            ]
+                                        },
+                                        "andere_persoonsidentificatie_tekst": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_persoonsidentificatie_tekst Schema",
+                                            "examples": [
+                                                "misschien een documentnummer van een paspoort."
+                                            ]
+                                        },
+                                        "andere_persoonsidentificatie_schema": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_persoonsidentificatie_schema Schema",
+                                            "examples": [
+                                                "SCHEMA1234"
+                                            ]
+                                        },
+                                        "andere_persoonsidentificatie_issuer": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_persoonsidentificatie_issuer Schema",
+                                            "examples": [
+                                                "DE_ISSUER_BV"
+                                            ]
+                                        }
+                                    },
+                                    "examples": [{
+                                        "geboortedatum": "2012-04-23",
+                                        "geboorteplaats": "BREDA",
+                                        "geboorteprovincie": "Noord Brabant",
+                                        "geboorteland": "NL",
+                                        "andere_persoonsidentificatie_tekst": "misschien een documentnummer van een paspoort.",
+                                        "andere_persoonsidentificatie_schema": "SCHEMA1234",
+                                        "andere_persoonsidentificatie_issuer": "DE_ISSUER_BV"
+                                    }]
+                                },
+                                "organisatie_identificatie": {
+                                    "type": "object",
+                                    "default": {},
+                                    "title": "The organisatie_identificatie Schema",
+                                    "required": [
+                                        "BIC",
+                                        "legal_entity_identifier",
+                                        "andere_identificatie_tekst",
+                                        "andere_identificatie_schema",
+                                        "andere_identificatie_issuer"
+                                    ],
+                                    "properties": {
+                                        "BIC": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The BIC Schema",
+                                            "examples": [
+                                                "RABONL2U"
+                                            ]
+                                        },
+                                        "legal_entity_identifier": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The legal_entity_identifier Schema",
+                                            "examples": [
+                                                "ongevalideerde LEI code conform ISO 17442"
+                                            ]
+                                        },
+                                        "andere_identificatie_tekst": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_identificatie_tekst Schema",
+                                            "examples": [
+                                                "HOIHOI"
+                                            ]
+                                        },
+                                        "andere_identificatie_schema": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_identificatie_schema Schema",
+                                            "examples": [
+                                                "HETSCHEMADERDINGEN"
+                                            ]
+                                        },
+                                        "andere_identificatie_issuer": {
+                                            "type": "string",
+                                            "default": "",
+                                            "title": "The andere_identificatie_issuer Schema",
+                                            "examples": [
+                                                "DEISSUERBV"
+                                            ]
+                                        }
+                                    },
+                                    "examples": [{
+                                        "BIC": "RABONL2U",
+                                        "legal_entity_identifier": "ongevalideerde LEI code conform ISO 17442",
+                                        "andere_identificatie_tekst": "HOIHOI",
+                                        "andere_identificatie_schema": "HETSCHEMADERDINGEN",
+                                        "andere_identificatie_issuer": "DEISSUERBV"
+                                    }]
+                                }
+                            },
+                            "examples": [{
+                                "persoonsidentificatie": {
+                                    "geboortedatum": "2012-04-23",
+                                    "geboorteplaats": "BREDA",
+                                    "geboorteprovincie": "Noord Brabant",
+                                    "geboorteland": "NL",
+                                    "andere_persoonsidentificatie_tekst": "misschien een documentnummer van een paspoort.",
+                                    "andere_persoonsidentificatie_schema": "SCHEMA1234",
+                                    "andere_persoonsidentificatie_issuer": "DE_ISSUER_BV"
+                                },
+                                "organisatie_identificatie": {
+                                    "BIC": "RABONL2U",
+                                    "legal_entity_identifier": "ongevalideerde LEI code conform ISO 17442",
+                                    "andere_identificatie_tekst": "HOIHOI",
+                                    "andere_identificatie_schema": "HETSCHEMADERDINGEN",
+                                    "andere_identificatie_issuer": "DEISSUERBV"
+                                }
+                            }]
+                        }
+                    },
+                    "examples": [{
+                        "naam": "Laurens van Leuven",
+                        "adresregel_een": "Croeselaan 1",
+                        "adresregel_twee": "Utrecht",
+                        "rekening": {
+                            "IBAN": "NL48SNSB0186743106",
+                            "anders": "kan niet tegelijk met iban"
+                        },
+                        "financiele_instantie": {
+                            "BIC": "SNSBNL2AXXX"
+                        },
+                        "identificatie": {
+                            "persoonsidentificatie": {
+                                "geboortedatum": "2012-04-23",
+                                "geboorteplaats": "BREDA",
+                                "geboorteprovincie": "Noord Brabant",
+                                "geboorteland": "NL",
+                                "andere_persoonsidentificatie_tekst": "misschien een documentnummer van een paspoort.",
+                                "andere_persoonsidentificatie_schema": "SCHEMA1234",
+                                "andere_persoonsidentificatie_issuer": "DE_ISSUER_BV"
+                            },
+                            "organisatie_identificatie": {
+                                "BIC": "RABONL2U",
+                                "legal_entity_identifier": "ongevalideerde LEI code conform ISO 17442",
+                                "andere_identificatie_tekst": "HOIHOI",
+                                "andere_identificatie_schema": "HETSCHEMADERDINGEN",
+                                "andere_identificatie_issuer": "DEISSUERBV"
+                            }
+                        }
+                    }]
+                },
+                "crediteur": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The crediteur Schema",
+                    "required": [
+                        "naam"
+                    ],
+                    "properties": {
+                        "naam": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The naam Schema",
+                            "examples": [
+                                "Mollies BV"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "naam": "Mollies BV"
+                    }]
+                },
+                "uiteindelijke_debiteur": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The uiteindelijke_debiteur Schema",
+                    "required": [
+                        "naam"
+                    ],
+                    "properties": {
+                        "naam": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The naam Schema",
+                            "examples": [
+                                "Bol.Com"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "naam": "Bol.Com"
+                    }]
+                },
+                "uiteindelijke_crediteur": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The uiteindelijke_crediteur Schema",
+                    "required": [
+                        "naam"
+                    ],
+                    "properties": {
+                        "naam": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The naam Schema",
+                            "examples": [
+                                "Afrojack"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "naam": "Afrojack"
+                    }]
+                },
+                "remittance": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The remittance Schema",
+                    "required": [
+                        "ongestructureerd",
+                        "gestructureerd"
+                    ],
+                    "properties": {
+                        "ongestructureerd": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The ongestructureerd Schema",
+                            "examples": [
+                                "Dit is een klanttekst"
+                            ]
+                        },
+                        "gestructureerd": {
+                            "type": "object",
+                            "default": {},
+                            "title": "The gestructureerd Schema",
+                            "required": [
+                                "referentie",
+                                "issuer"
+                            ],
+                            "properties": {
+                                "referentie": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The referentie Schema",
+                                    "examples": [
+                                        "CODE12345"
+                                    ]
+                                },
+                                "issuer": {
+                                    "type": "string",
+                                    "default": "",
+                                    "title": "The issuer Schema",
+                                    "examples": [
+                                        "IDEAL"
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "referentie": "CODE12345",
+                                "issuer": "IDEAL"
+                            }]
+                        }
+                    },
+                    "examples": [{
+                        "ongestructureerd": "Dit is een klanttekst",
+                        "gestructureerd": {
+                            "referentie": "CODE12345",
+                            "issuer": "IDEAL"
+                        }
+                    }]
+                },
+                "local_instrument_code": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The local_instrument_code Schema",
+                    "required": [
+                        "code",
+                        "proprietary"
+                    ],
+                    "properties": {
+                        "code": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The code Schema",
+                            "examples": [
+                                "INSTNT01"
+                            ]
+                        },
+                        "proprietary": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The proprietary Schema",
+                            "examples": [
+                                "Kan niet tegelijk met code"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "code": "INSTNT01",
+                        "proprietary": "Kan niet tegelijk met code"
+                    }]
+                },
+                "direct_debit_info": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The direct_debit_info Schema",
+                    "required": [
+                        "creditor_identifier",
+                        "sequence_type"
+                    ],
+                    "properties": {
+                        "creditor_identifier": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The creditor_identifier Schema",
+                            "examples": [
+                                "INCASSANT_ID"
+                            ]
+                        },
+                        "sequence_type": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The sequence_type Schema",
+                            "examples": [
+                                "RECURRING"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "creditor_identifier": "INCASSANT_ID",
+                        "sequence_type": "RECURRING"
+                    }]
+                },
+                "purpose": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The purpose Schema",
+                    "required": [
+                        "code",
+                        "proprietary"
+                    ],
+                    "properties": {
+                        "code": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The code Schema",
+                            "examples": [
+                                "CODE"
+                            ]
+                        },
+                        "proprietary": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The proprietary Schema",
+                            "examples": [
+                                "Kan niet tegelijk met code"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "code": "CODE",
+                        "proprietary": "Kan niet tegelijk met code"
+                    }]
+                },
+                "category_purpose": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The category_purpose Schema",
+                    "required": [
+                        "code",
+                        "proprietary"
+                    ],
+                    "properties": {
+                        "code": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The code Schema",
+                            "examples": [
+                                "CODE"
+                            ]
+                        },
+                        "proprietary": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The proprietary Schema",
+                            "examples": [
+                                "Kan niet tegelijk met code"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "code": "CODE",
+                        "proprietary": "Kan niet tegelijk met code"
+                    }]
+                },
+                "terugbetaling": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "The terugbetaling Schema",
+                    "examples": [
+                        true
+                    ]
+                },
+                "reden_terugbetaling": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The reden_terugbetaling Schema",
+                    "examples": [
+                        "AC01"
+                    ]
+                }
+            },
+            "examples": [{
+                "settlementdatum": "2012-04-23",
+                "inlegdatum": "2012-04-23",
+                "transactie_referentie": {
+                    "endtoend_identification": "CUSTOMERReference1",
+                    "transaction_identification": "SCT202204240000100001",
+                    "instruction_identification": "instructie12314",
+                    "payment_information_identification": "payment_batch_id234",
+                    "mandate_id": "incassomandaat1234",
+                    "account_servicer_reference": "DV220424ZIK00004",
+                    "uetr": "fbd82ac9-dc5d-4c56-a680-e14d43616f22"
+                },
+                "bedragsinformatie": {
+                    "instructed_amount": 123456789.12,
+                    "instructed_currency": "USD",
+                    "settlement_amount": 123456789.12,
+                    "settlement_currency": "USD",
+                    "exchange_rate": 123456.12345678
+                },
+                "charges": [{
+                    "currency_code": "USD",
+                    "charge_amount": 123456789.12,
+                    "charge_type": "SENDER_CHARGES"
+                },
+                {
+                    "currency_code": "GBP",
+                    "charge_amount": 1234.12,
+                    "charge_type": "RECEIVER_CHARGES"
+                },
+                {
+                    "currency_code": "EUR",
+                    "charge_amount": 12.12,
+                    "charge_type": "FEE"
+                },
+                {
+                    "currency_code": "EUR",
+                    "charge_amount": 1.10,
+                    "charge_type": "EXCHANGE_RATE_SURCHARGE"
+                }],
+                "charge_bearer": "SHARED",
+                "debiteur": {
+                    "naam": "Laurens van Leuven",
+                    "adresregel_een": "Croeselaan 1",
+                    "adresregel_twee": "Utrecht",
+                    "rekening": {
+                        "IBAN": "NL48SNSB0186743106",
+                        "anders": "kan niet tegelijk met iban"
+                    },
+                    "financiele_instantie": {
+                        "BIC": "SNSBNL2AXXX"
+                    },
+                    "identificatie": {
+                        "persoonsidentificatie": {
+                            "geboortedatum": "2012-04-23",
+                            "geboorteplaats": "BREDA",
+                            "geboorteprovincie": "Noord Brabant",
+                            "geboorteland": "NL",
+                            "andere_persoonsidentificatie_tekst": "misschien een documentnummer van een paspoort.",
+                            "andere_persoonsidentificatie_schema": "SCHEMA1234",
+                            "andere_persoonsidentificatie_issuer": "DE_ISSUER_BV"
+                        },
+                        "organisatie_identificatie": {
+                            "BIC": "RABONL2U",
+                            "legal_entity_identifier": "ongevalideerde LEI code conform ISO 17442",
+                            "andere_identificatie_tekst": "HOIHOI",
+                            "andere_identificatie_schema": "HETSCHEMADERDINGEN",
+                            "andere_identificatie_issuer": "DEISSUERBV"
+                        }
+                    }
+                },
+                "crediteur": {
+                    "naam": "Mollies BV"
+                },
+                "uiteindelijke_debiteur": {
+                    "naam": "Bol.Com"
+                },
+                "uiteindelijke_crediteur": {
+                    "naam": "Afrojack"
+                },
+                "remittance": {
+                    "ongestructureerd": "Dit is een klanttekst",
+                    "gestructureerd": {
+                        "referentie": "CODE12345",
+                        "issuer": "IDEAL"
+                    }
+                },
+                "local_instrument_code": {
+                    "code": "INSTNT01",
+                    "proprietary": "Kan niet tegelijk met code"
+                },
+                "direct_debit_info": {
+                    "creditor_identifier": "INCASSANT_ID",
+                    "sequence_type": "RECURRING"
+                },
+                "purpose": {
+                    "code": "CODE",
+                    "proprietary": "Kan niet tegelijk met code"
+                },
+                "category_purpose": {
+                    "code": "CODE",
+                    "proprietary": "Kan niet tegelijk met code"
+                },
+                "terugbetaling": true,
+                "reden_terugbetaling": "AC01"
+            }]
+        },
+        "Cardtransactie": {
+            "type": "object",
+            "default": {},
+            "title": "The Cardtransactie Schema",
+            "required": [
+                "kaart",
+                "verkooppunt",
+                "vreemde_valuta_code",
+                "vreemde_valuta_bedrag",
+                "kosten",
+                "correctie_pintransactie"
+            ],
+            "properties": {
+                "kaart": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The kaart Schema",
+                    "required": [
+                        "pasnummer"
+                    ],
+                    "properties": {
+                        "pasnummer": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The pasnummer Schema",
+                            "examples": [
+                                "007"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "pasnummer": "007"
+                    }]
+                },
+                "verkooppunt": {
+                    "type": "object",
+                    "default": {},
+                    "title": "The verkooppunt Schema",
+                    "required": [
+                        "naam",
+                        "land"
+                    ],
+                    "properties": {
+                        "naam": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The naam Schema",
+                            "examples": [
+                                "Broese Utrecht V0123"
+                            ]
+                        },
+                        "land": {
+                            "type": "string",
+                            "default": "",
+                            "title": "The land Schema",
+                            "examples": [
+                                "NL"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "naam": "Broese Utrecht V0123",
+                        "land": "NL"
+                    }]
+                },
+                "vreemde_valuta_code": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The vreemde_valuta_code Schema",
+                    "examples": [
+                        "USD"
+                    ]
+                },
+                "vreemde_valuta_bedrag": {
+                    "type": "number",
+                    "default": 0.0,
+                    "title": "The vreemde_valuta_bedrag Schema",
+                    "examples": [
+                        123456789.12
+                    ]
+                },
+                "kosten": {
+                    "type": "number",
+                    "default": 0.0,
+                    "title": "The kosten Schema",
+                    "examples": [
+                        123456789.12
+                    ]
+                },
+                "correctie_pintransactie": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "The correctie_pintransactie Schema",
+                    "examples": [
+                        true
+                    ]
+                }
+            },
+            "examples": [{
+                "kaart": {
+                    "pasnummer": "007"
+                },
+                "verkooppunt": {
+                    "naam": "Broese Utrecht V0123",
+                    "land": "NL"
+                },
+                "vreemde_valuta_code": "USD",
+                "vreemde_valuta_bedrag": 123456789.12,
+                "kosten": 123456789.12,
+                "correctie_pintransactie": true
+            }]
+        }
+    },
+    "examples": [{
+        "message_identification": {
+            "bron": "SAS",
+            "journaaldatum": "2012-04-23",
+            "volgnummer": 12345
+        },
+        "valuta": "EUR",
+        "bedrag": 123456789.12,
+        "openingssaldo":
+            
+            -12345678901.12,
+        "boek_tijdstip": "2012-04-23T18:25:43.511",
+        "valutadatum": "2012-04-23",
+        "transactiecode": "9720",
+        "transactie_lettercode": "OVB",
+        "iban_tegenpartij": "FR7630004013280001220066504",
+        "naam_tegenpartij": "Gerard Depardieu",
+        "boeking_referentie": {
+            "navraagnummer": "Dossier1234",
+            "betalingskenmerk": "1234-5678-01.23",
+            "eb_sleutel": {
+                "contractnummer": "12345678",
+                "setnummer": "123456789012",
+                "transactienummer": "12345"
+            }
+        },
+        "omschrijving": "jeetje wat een lange transactieomschrijving. maar je kunt dan ook 480 karakters maximaal ontvangen. Dat zal niet vaak voorkomen.",
+        "Batchtransactie": {
+            "payment_information_identification": "payment_batch_id234",
+            "aantal_transacties": 87,
+            "totaalbedrag": "123456789.12"
+        },
+        "Transactie": {
+            "settlementdatum": "2012-04-23",
+            "inlegdatum": "2012-04-23",
+            "transactie_referentie": {
+                "endtoend_identification": "CUSTOMERReference1",
+                "transaction_identification": "SCT202204240000100001",
+                "instruction_identification": "instructie12314",
+                "payment_information_identification": "payment_batch_id234",
+                "mandate_id": "incassomandaat1234",
+                "account_servicer_reference": "DV220424ZIK00004",
+                "uetr": "fbd82ac9-dc5d-4c56-a680-e14d43616f22"
+            },
+            "bedragsinformatie": {
+                "instructed_amount": 123456789.12,
+                "instructed_currency": "USD",
+                "settlement_amount": 123456789.12,
+                "settlement_currency": "USD",
+                "exchange_rate": 123456.12345678
+            },
+            "charges": [{
+                "currency_code": "USD",
+                "charge_amount": 123456789.12,
+                "charge_type": "SENDER_CHARGES"
+            },
+            {
+                "currency_code": "GBP",
+                "charge_amount": 1234.12,
+                "charge_type": "RECEIVER_CHARGES"
+            },
+            {
+                "currency_code": "EUR",
+                "charge_amount": 12.12,
+                "charge_type": "FEE"
+            },
+            {
+                "currency_code": "EUR",
+                "charge_amount": 1.10,
+                "charge_type": "EXCHANGE_RATE_SURCHARGE"
+            }],
+            "charge_bearer": "SHARED",
+            "debiteur": {
+                "naam": "Laurens van Leuven",
+                "adresregel_een": "Croeselaan 1",
+                "adresregel_twee": "Utrecht",
+                "rekening": {
+                    "IBAN": "NL48SNSB0186743106",
+                    "anders": "kan niet tegelijk met iban"
+                },
+                "financiele_instantie": {
+                    "BIC": "SNSBNL2AXXX"
+                },
+                "identificatie": {
+                    "persoonsidentificatie": {
+                        "geboortedatum": "2012-04-23",
+                        "geboorteplaats": "BREDA",
+                        "geboorteprovincie": "Noord Brabant",
+                        "geboorteland": "NL",
+                        "andere_persoonsidentificatie_tekst": "misschien een documentnummer van een paspoort.",
+                        "andere_persoonsidentificatie_schema": "SCHEMA1234",
+                        "andere_persoonsidentificatie_issuer": "DE_ISSUER_BV"
+                    },
+                    "organisatie_identificatie": {
+                        "BIC": "RABONL2U",
+                        "legal_entity_identifier": "ongevalideerde LEI code conform ISO 17442",
+                        "andere_identificatie_tekst": "HOIHOI",
+                        "andere_identificatie_schema": "HETSCHEMADERDINGEN",
+                        "andere_identificatie_issuer": "DEISSUERBV"
+                    }
+                }
+            },
+            "crediteur": {
+                "naam": "Mollies BV"
+            },
+            "uiteindelijke_debiteur": {
+                "naam": "Bol.Com"
+            },
+            "uiteindelijke_crediteur": {
+                "naam": "Afrojack"
+            },
+            "remittance": {
+                "ongestructureerd": "Dit is een klanttekst",
+                "gestructureerd": {
+                    "referentie": "CODE12345",
+                    "issuer": "IDEAL"
+                }
+            },
+            "local_instrument_code": {
+                "code": "INSTNT01",
+                "proprietary": "Kan niet tegelijk met code"
+            },
+            "direct_debit_info": {
+                "creditor_identifier": "INCASSANT_ID",
+                "sequence_type": "RECURRING"
+            },
+            "purpose": {
+                "code": "CODE",
+                "proprietary": "Kan niet tegelijk met code"
+            },
+            "category_purpose": {
+                "code": "CODE",
+                "proprietary": "Kan niet tegelijk met code"
+            },
+            "terugbetaling": true,
+            "reden_terugbetaling": "AC01"
+        },
+        "Cardtransactie": {
+            "kaart": {
+                "pasnummer": "007"
+            },
+            "verkooppunt": {
+                "naam": "Broese Utrecht V0123",
+                "land": "NL"
+            },
+            "vreemde_valuta_code": "USD",
+            "vreemde_valuta_bedrag": 123456789.12,
+            "kosten": 123456789.12,
+            "correctie_pintransactie": true
+        }
+    }]
+}
