@@ -7,6 +7,8 @@ import os
 
 def generate_save_fake_json(faker: JSF, contract_id: int, output_filename: str):
     """
+    Function specific to the json schema of the example message.
+
     Args:
         faker (JSF): fake json generator object
         contract_id (int): contract id to be added to the json message
@@ -22,8 +24,8 @@ def generate_save_fake_json(faker: JSF, contract_id: int, output_filename: str):
 
 
 # Generate 100 contract ids
-N_contracts = 2
-N_messages_per_contract = 5
+N_contracts = 100
+N_messages_per_contract = 100
 contract_ids = random.sample(range(10000000, 99999999), N_contracts)
 
 # File path to save messages
@@ -35,6 +37,7 @@ f = open("example_transaction.schema.json")
 schema = json.load(f)
 
 # Initialise fake JSON generator from json schema
+# Based on this repo: https://github.com/ghandic/jsf
 faker = JSF.from_json("example_transaction.schema.json")
 
 for contract_id in contract_ids:
